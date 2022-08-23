@@ -1,14 +1,14 @@
 package com.moataz.mox.data.repository
 
-import com.moataz.mox.data.api.ProService
-import com.moataz.mox.utils.status.Recourses
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.flowOn
+import com.moataz.mox.data.api.ProAPIService
+import com.moataz.mox.data.model.ArticleResponse
+import com.moataz.mox.data.request.ApiClient
+import io.reactivex.Single
 
-class ProRepository(private val proService: ProService) {
-    suspend fun getTopList() = flow {
-        emit(Recourses.Loading())
-        emit(proService.getArticlesTopList())
-    }.flowOn(Dispatchers.IO)
+class ProRepository {
+    private val proService: ProAPIService = ApiClient.apiServicePro
+
+    fun getProList(): Single<ArticleResponse> {
+        return proService.getProList()
+    }
 }

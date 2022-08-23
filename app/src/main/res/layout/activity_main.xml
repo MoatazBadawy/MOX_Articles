@@ -11,19 +11,19 @@
         android:id="@+id/tabs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginStart="@dimen/_8sdp"
-        android:paddingEnd="@dimen/_8sdp"
-        app:tabIndicatorHeight="0dp"
-        app:tabMode="scrollable"
-        app:tabRippleColor="@null"
+        android:layout_marginTop="@dimen/_8sdp"
         android:overScrollMode="never"
-        app:tabBackground="@drawable/tab_layout_selector"
-        app:tabSelectedTextColor="@color/white"
-        app:tabTextAppearance="@style/TabTextAppearance"
+        android:paddingEnd="@dimen/_8sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:tabBackground="@drawable/tab_layout_selector"
+        app:tabIndicatorHeight="0dp"
+        app:tabMode="scrollable"
+        app:tabRippleColor="@null"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextAppearance="@style/TabTextAppearance"
         tools:ignore="RtlSymmetry" />
 
     <androidx.viewpager2.widget.ViewPager2
@@ -34,5 +34,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabs"/>
+        app:layout_constraintTop_toBottomOf="@+id/tabs" />
 </androidx.constraintlayout.widget.ConstraintLayout>

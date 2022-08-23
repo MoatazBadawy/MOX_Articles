@@ -1,12 +1,12 @@
 package com.moataz.mox.utils.helper
 
 object HttpRoutes {
-    private const val BASE_URL = "https://api.rss2json.com/v1/api.json"
-    private const val KEY = "?api_key=b7fnpiy39m1ntewj93105d5ukhpmifvmnqufyksq"
+    const val BASE_URL = "https://api.rss2json.com/"
+    const val API_KEY = "b7fnpiy39m1ntewj93105d5ukhpmifvmnqufyksq"
 
-    const val TECH = "$BASE_URL?rss_url=https://www.theverge.com/rss/full.xml$KEY"
-    const val PROGRAMMING = "$BASE_URL?rss_url=https://betterprogramming.pub/feed$KEY"
-    const val ANDROID = "$BASE_URL?rss_url=https://medium.com/feed/tag/androiddev$KEY"
-    const val KOTLIN = "$BASE_URL?rss_url=https://medium.com/feed/tag/kotlin$KEY"
-    const val UX = "$BASE_URL?rss_url=https://uxplanet.org/feed$KEY"
+    const val TOP = "https://www.theverge.com/rss/full.xml"
+    const val PROGRAMMING = "https://betterprogramming.pub/feed"
+    const val ANDROID = "https://medium.com/feed/tag/androiddev"
+    const val KOTLIN = "https://medium.com/feed/tag/kotlin"
+    const val UX = "https://uxplanet.org/feed"
 }

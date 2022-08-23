@@ -3,11 +3,11 @@ package com.moataz.mox.ui.app.adapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.moataz.mox.ui.android.AndroidFragment
-import com.moataz.mox.ui.kotlin.KotlinFragment
-import com.moataz.mox.ui.programming.ProFragment
-import com.moataz.mox.ui.top.TopFragment
-import com.moataz.mox.ui.ux.UXFragment
+import com.moataz.mox.ui.android.view.AndroidFragment
+import com.moataz.mox.ui.kotlin.view.KotlinFragment
+import com.moataz.mox.ui.programming.view.ProFragment
+import com.moataz.mox.ui.top.view.TopFragment
+import com.moataz.mox.ui.ux.view.UXFragment
 
 class ArticlesViewPagerAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity) {
 

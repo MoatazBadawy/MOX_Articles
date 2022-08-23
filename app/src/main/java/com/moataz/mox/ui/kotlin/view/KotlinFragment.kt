@@ -1,30 +1,23 @@
-package com.moataz.mox.ui.kotlin
+package com.moataz.mox.ui.kotlin.view
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.lifecycleScope
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.moataz.mox.R
-import com.moataz.mox.data.api.KotlinService
-import com.moataz.mox.data.api.TopService
-import com.moataz.mox.data.repository.KotlinRepository
-import com.moataz.mox.data.repository.TopRepository
+import com.moataz.mox.data.model.ArticleResponse
 import com.moataz.mox.databinding.FragmentKotlinBinding
-import com.moataz.mox.databinding.FragmentTechnologyBinding
 import com.moataz.mox.ui.app.adapter.ArticlesAdapter
+import com.moataz.mox.ui.kotlin.viewmodel.KotlinViewModel
 import com.moataz.mox.utils.status.Recourses
-import kotlinx.coroutines.launch
 
 class KotlinFragment : Fragment() {
     private lateinit var binding: FragmentKotlinBinding
     private val adapter = ArticlesAdapter()
-    private val repository = KotlinRepository(KotlinService())
-
+    private val viewModel: KotlinViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -49,19 +42,17 @@ class KotlinFragment : Fragment() {
     }
 
     private fun getArticlesList() {
-        lifecycleScope.launch {
-            repository.getTopList().collect { response ->
-                when (response) {
-                    is Recourses.Success -> {
-                        binding.progressBar.visibility = View.GONE
-                        adapter.setData(response.transferredData.items)
-                    }
-                    is Recourses.Failure -> {
-                        Log.e("Error", "NO DATA")
-                    }
-                    is Recourses.Loading -> {
-                        binding.progressBar.visibility = View.VISIBLE
-                    }
+        viewModel.mediumObjectsList.observe(requireActivity()) { response: Recourses<ArticleResponse> ->
+            when (response) {
+                is Recourses.Loading -> {
+                    binding.progressBar.visibility = View.VISIBLE
+                }
+                is Recourses.Success -> {
+                    binding.progressBar.visibility = View.GONE
+                    adapter.setData(response.transferredData.items)
+                }
+                is Recourses.Failure -> {
+                    binding.progressBar.visibility = View.GONE
                 }
             }
         }
