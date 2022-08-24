@@ -7,13 +7,13 @@
   <img alt="MVVM" src="https://img.shields.io/badge/MVVM-Architecture-orange"/>
 </p>
 
-## Overview 🕌
+## Overview 
 An articles app that lets the users read and discovering a lot of topics.
-• Home Screen to display the latest of articles.
-• Categories screen that includes a lot of major’s articles.
-• Save favorite articles with SQLite.
-• Apply MVVM Architecture and Databinding.
-• Daily Notification to attention the user with new articles and used shortcuts
+- Home Screen to display the latest of articles.
+- Categories screen that includes a lot of major’s articles.
+- Save favorite articles with SQLite.
+- Apply MVVM Architecture and Databinding.
+- Daily Notification to attention the user with new articles and used shortcuts
 <br />
 
 ## App Images
